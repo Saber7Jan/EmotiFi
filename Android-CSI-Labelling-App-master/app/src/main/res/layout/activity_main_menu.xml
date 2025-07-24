@@ -1,0 +1,70 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Existing buttons remain the same -->
+    <Button
+        android:id="@+id/timerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Timer Activity"
+        android:onClick="openTimerMainActivity"/>
+
+    <Button
+        android:id="@+id/toggleButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Toggle Activity"
+        android:onClick="openToggleMainActivity"/>
+
+    <Button
+        android:id="@+id/manualInputButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Manual Input Activity"
+        android:onClick="openManualInputMainActivity"/>
+
+    <Button
+        android:id="@+id/pressAndHoldButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Press and Hold Activity"
+        android:onClick="openPressAndHoldMainActivity"/>
+
+    <!-- New Real-Time Test Button -->
+    <Button
+        android:id="@+id/realTimeTestButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Real-Time Emotion Test"
+        android:onClick="startRealTimeTest"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFFFFF"/>
+
+    <Button
+        android:id="@+id/displayCSVButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Display CSV"
+        android:onClick="displayCSV"/>
+
+    <Button
+        android:id="@+id/clearCSVButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Clear CSV"
+        android:onClick="clearCSV"/>
+
+    <!-- Go Live Button -->
+    <Button
+        android:id="@+id/btnGoLive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go Live"
+        android:layout_marginTop="16dp"
+        android:onClick="openWebDashboard"/>
+
+</LinearLayout>

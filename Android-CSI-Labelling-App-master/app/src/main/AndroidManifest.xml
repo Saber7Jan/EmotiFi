@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.stevenmhernandez.csi_labelling_app">
+
+    <!-- Permissions for network access -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <!-- Permissions for Bluetooth access -->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- Application declaration -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- MainMenuActivity as the launcher activity -->
+        <activity android:name=".Experiments.MainMenuActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Other activities -->
+        <activity android:name=".Experiments.TimerMainActivity" android:exported="true"/>
+        <activity android:name=".Experiments.PressAndHoldMainActivity" android:exported="true"/>
+        <activity android:name=".Experiments.ToggleMainActivity" android:exported="true"/>
+        <activity android:name=".Experiments.ManualInputMainActivity" android:exported="true"/>
+
+        <!-- NEW: Add RealTimeTestActivity -->
+        <activity
+            android:name=".Experiments.RealTimeTestActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"/>
+
+            <!-- Add LiveSpectrogramActivity here -->
+<activity
+    android:name=".Experiments.LiveSpectrogramActivity"
+    android:exported="false"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+    android:screenOrientation="portrait"/>
+
+        <!-- Add DisplayCSVActivity here -->
+        <activity android:name=".DisplayCSVActivity" android:exported="true"/>
+
+        <service android:name="com.stevenmhernandez.esp32csiserial.UsbService" />
+
+        <!-- FileProvider configuration -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.stevenmhernandez.csi_labelling_app.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+</manifest>

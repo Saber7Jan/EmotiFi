@@ -1,0 +1,14 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/csvTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="CSV Content Will Be Shown Here"
+        android:textSize="16sp"
+        android:background="#f4f4f4"/>
+</ScrollView>

@@ -1,0 +1,32 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        google()
+        jcenter() // Keep for now if other dependencies still rely on it, but generally deprecated
+        mavenCentral()
+        maven { url 'https://plugins.gradle.org/m2/' }
+        maven { url 'https://s3.amazonaws.com/mobile-sdk-repo/android' }
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+        // Add this for PyTorch
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.4'
+        classpath 'com.amazonaws:aws-android-sdk-appsync-gradle-plugin:3.4.2'
+        // Add this if you need any PyTorch-specific gradle plugins in the future
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+        mavenCentral()
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' } // Add this for PyTorch
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
